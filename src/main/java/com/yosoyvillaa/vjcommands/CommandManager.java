@@ -49,14 +49,16 @@ public class CommandManager {
 
     public void registerCommand(ICommand command) {
         System.out.println("[VJCommands] Registering command " + command.getName());
-        if (command instanceof PrefixCommand prefixCommand) {
+        if (command instanceof PrefixCommand) {
+            PrefixCommand prefixCommand = (PrefixCommand) command;
             if (prefixCommands.containsKey(prefixCommand.getPrefix() + prefixCommand.getName()))
                 throw new IllegalArgumentException("A prefix command called `" + prefixCommand.getName() + "` is already registered");
 
             prefixCommands.put(prefixCommand.getPrefix() + prefixCommand.getName(), prefixCommand);
         }
 
-        if (command instanceof SlashCommand slashCommand) {
+        if (command instanceof SlashCommand) {
+            SlashCommand slashCommand = (SlashCommand) command;
             if (slashCommands.containsKey(slashCommand.getName()))
                 throw new IllegalArgumentException("A slash command called `" + slashCommand.getName() + "` is already registered");
 
@@ -74,11 +76,13 @@ public class CommandManager {
 
     public void unregisterCommand(ICommand command) {
         System.out.println("[VJCommands] Unregistering command " + command.getName());
-        if (command instanceof PrefixCommand prefixCommand) {
+        if (command instanceof PrefixCommand) {
+            PrefixCommand prefixCommand = (PrefixCommand) command;
             prefixCommands.remove(prefixCommand.getPrefix() + prefixCommand.getName());
         }
 
-        if (command instanceof SlashCommand slashCommand) {
+        if (command instanceof SlashCommand) {
+            SlashCommand slashCommand = (SlashCommand) command;
             slashCommands.remove(slashCommand.getName());
             System.out.println("Slash commands will be already being shown on the client, you will need to restart the bot with the command disabled");
         }
