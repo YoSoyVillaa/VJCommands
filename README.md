@@ -1,6 +1,6 @@
 # VJCommands
 
-A command framework compatible with JDA
+A command framework compatible with [JDA](https://github.com/DV8FromTheWorld/JDA)
 
 ## Usage
 Is really easy to use it, the only thing you need is implements the `PrefixCommand` class or the `SlashCommand` class, and register it with the `CommandMamager` using `CommandManager#registerCommand()`
