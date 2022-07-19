@@ -8,7 +8,6 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.AnnotatedEventManager;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
-import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -49,12 +48,12 @@ public class CommandManager {
     }
 
     public void registerCommand(ICommand command) {
+        System.out.println("[VJCommands] Registering command " + command.getName());
         if (command instanceof PrefixCommand prefixCommand) {
             if (prefixCommands.containsKey(prefixCommand.getPrefix() + prefixCommand.getName()))
                 throw new IllegalArgumentException("A prefix command called `" + prefixCommand.getName() + "` is already registered");
 
             prefixCommands.put(prefixCommand.getPrefix() + prefixCommand.getName(), prefixCommand);
-            return;
         }
 
         if (command instanceof SlashCommand slashCommand) {
@@ -64,6 +63,7 @@ public class CommandManager {
             slashCommands.put(slashCommand.getName(), slashCommand);
             jda.upsertCommand(slashCommand.getCommandData()).queue();
         }
+        System.out.println("[VJCommands] Command " + command.getName() + " registered");
     }
 
     public void registerCommands(ICommand... commands) {
@@ -73,6 +73,7 @@ public class CommandManager {
     }
 
     public void unregisterCommand(ICommand command) {
+        System.out.println("[VJCommands] Unregistering command " + command.getName());
         if (command instanceof PrefixCommand prefixCommand) {
             prefixCommands.remove(prefixCommand.getPrefix() + prefixCommand.getName());
         }
@@ -81,6 +82,7 @@ public class CommandManager {
             slashCommands.remove(slashCommand.getName());
             System.out.println("Slash commands will be already being shown on the client, you will need to restart the bot with the command disabled");
         }
+        System.out.println("[VJCommands] Command " + command.getName() + " unregistered");
     }
 
     public void unregisterAllCommands() {
