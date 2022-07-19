@@ -8,6 +8,7 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.AnnotatedEventManager;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
+import net.dv8tion.jda.internal.interactions.CommandDataImpl;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -61,7 +62,7 @@ public class CommandManager {
                 throw new IllegalArgumentException("A slash command called `" + slashCommand.getName() + "` is already registered");
 
             slashCommands.put(slashCommand.getName(), slashCommand);
-            jda.upsertCommand(slashCommand.getName(), slashCommand.getDescription()).queue();
+            jda.upsertCommand(slashCommand.getCommandData()).queue();
         }
     }
 
