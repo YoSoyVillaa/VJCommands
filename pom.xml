@@ -6,7 +6,7 @@
 
     <groupId>com.yosoyvillaa</groupId>
     <artifactId>VJCommands</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
 
     <properties>
         <maven.compiler.source>16</maven.compiler.source>
