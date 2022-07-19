@@ -8,7 +8,7 @@ Is really easy to use it, the only thing you need is implements the `PrefixComma
 **Example**:
 
 ```java
-    public static void main(String[] args) throws {
+    public static void main(String[] args) throws LoginException {
         // Creates an instance of a bot             
         JDA jda = JDABuilder.createDefault(args[0]).build();
                 
