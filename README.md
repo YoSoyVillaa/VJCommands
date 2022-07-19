@@ -29,7 +29,7 @@ public class PingCommand implements SlashCommand {
 
     @Override
     public void execute(SlashCommandInteractionEvent slashCommandInteractionEvent) {
-        event.reply("Ping: " event.getJDA().getGatewayPing() + "ms").queue();
+        event.reply("Ping: " slashCommandInteractionEvent.getJDA().getGatewayPing() + "ms").queue();
     }
 
     @Override
@@ -51,7 +51,7 @@ public class PingCommand implements PrefixCommand {
 
     @Override
     public void execute(MessageReceivedEvent messageReceivedEvent) {
-        messageReceivedEvent.getMessage().reply("Ping: " event.getJDA().getGatewayPing() + "ms").queue();
+        messageReceivedEvent.getMessage().reply("Ping: " messageReceivedEvent.getJDA().getGatewayPing() + "ms").queue();
     }
 
     @Override
