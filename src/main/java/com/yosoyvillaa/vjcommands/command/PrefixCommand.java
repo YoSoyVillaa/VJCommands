@@ -4,7 +4,10 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 public interface PrefixCommand extends ICommand {
 
-    String getPrefix();
+    /**
+    default String getPrefix() {
+        return "!";
+    }
 
     void execute(MessageReceivedEvent event);
 }
