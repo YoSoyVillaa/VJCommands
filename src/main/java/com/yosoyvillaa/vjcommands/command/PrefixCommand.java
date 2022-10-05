@@ -3,7 +3,8 @@ package com.yosoyvillaa.vjcommands.command;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 /**
- * A {@link PrefixCommand} is represented by a prefix ('<b><i>!</i></b>' by default).
+ * A {@link PrefixCommand} is represented by a prefix.
+ * The default prefix is <b><i>!</i></b>.
  */
 public interface PrefixCommand extends ICommand {
 
