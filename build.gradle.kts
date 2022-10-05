@@ -14,7 +14,7 @@ dependencies {
 }
 
 group = "com.yosoyvillaa"
-version = "1.2"
+version = "1.3"
 description = "VJCommands"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
