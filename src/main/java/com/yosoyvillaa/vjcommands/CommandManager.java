@@ -8,6 +8,8 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.AnnotatedEventManager;
 import net.dv8tion.jda.api.hooks.SubscribeEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -16,6 +18,7 @@ import java.util.Set;
 
 public class CommandManager {
 
+    private static final Logger logger = LoggerFactory.getLogger("VJCommands");
     private final JDA jda;
     private final Map<String, PrefixCommand> prefixCommands;
     private final Map<String, SlashCommand> slashCommands;
@@ -48,7 +51,7 @@ public class CommandManager {
     }
 
     public void registerCommand(ICommand command) {
-        System.out.println("[VJCommands] Registering command " + command.getName());
+        logger.info("Registering command: " + command.getName());
         if (command instanceof PrefixCommand) {
             PrefixCommand prefixCommand = (PrefixCommand) command;
             if (prefixCommands.containsKey(prefixCommand.getPrefix() + prefixCommand.getName()))
@@ -65,7 +68,7 @@ public class CommandManager {
             slashCommands.put(slashCommand.getName(), slashCommand);
             jda.upsertCommand(slashCommand.getCommandData()).queue();
         }
-        System.out.println("[VJCommands] Command " + command.getName() + " registered");
+        logger.info("Command " + command.getName() + " registered");
     }
 
     public void registerCommands(ICommand... commands) {
@@ -75,7 +78,7 @@ public class CommandManager {
     }
 
     public void unregisterCommand(ICommand command) {
-        System.out.println("[VJCommands] Unregistering command " + command.getName());
+        logger.info("Unregistering command: " + command.getName());
         if (command instanceof PrefixCommand) {
             PrefixCommand prefixCommand = (PrefixCommand) command;
             prefixCommands.remove(prefixCommand.getPrefix() + prefixCommand.getName());
@@ -84,9 +87,9 @@ public class CommandManager {
         if (command instanceof SlashCommand) {
             SlashCommand slashCommand = (SlashCommand) command;
             slashCommands.remove(slashCommand.getName());
-            System.out.println("Slash commands will be already being shown on the client, you will need to restart the bot with the command disabled");
+            logger.warn("Slash commands will be already being shown on the client, you will need to restart the bot with the command disabled");
         }
-        System.out.println("[VJCommands] Command " + command.getName() + " unregistered");
+        logger.info("Command " + command.getName() + " unregistered");
     }
 
     public void unregisterAllCommands() {
