@@ -1,5 +1,6 @@
 plugins {
     java
+    `java-library`
     `maven-publish`
 }
 
@@ -24,6 +25,16 @@ publishing {
     }
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 tasks.withType<JavaCompile>() {
     options.encoding = "UTF-8"
+}
+
+tasks.withType<Javadoc>() {
+    setDestinationDir(file("docs/apidocs"))
+    (options as StandardJavadocDocletOptions).links("https://docs.oracle.com/javase/8/docs/api/")
 }
