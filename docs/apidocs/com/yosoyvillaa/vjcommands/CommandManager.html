@@ -109,6 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">CommandManager</span>
 extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html?is-external=true" title="class or interface in java.lang">Object</a></pre>
+<div class="block">The <a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html" title="class in com.yosoyvillaa.vjcommands"><code>CommandManager</code></a> is the place where you can manage all you commands</div>
 </li>
 </ul>
 </div>
@@ -146,19 +147,27 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getCommands--">getCommands</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getCommands--">getCommands</a></span>()</code>
+<div class="block">Get all the registered commands</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>net.dv8tion.jda.api.JDA</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getJda--">getJda</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getJda--">getJda</a></span>()</code>
+<div class="block">Gets the <code>JDA</code> instance associated to this <a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html" title="class in com.yosoyvillaa.vjcommands"><code>CommandManager</code></a></div>
+</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/PrefixCommand.html" title="interface in com.yosoyvillaa.vjcommands.command">PrefixCommand</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getPrefixCommands--">getPrefixCommands</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getPrefixCommands--">getPrefixCommands</a></span>()</code>
+<div class="block">Get all the registered <a href="../../../com/yosoyvillaa/vjcommands/command/PrefixCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>PrefixCommand</code></a></div>
+</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/SlashCommand.html" title="interface in com.yosoyvillaa.vjcommands.command">SlashCommand</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getSlashCommands--">getSlashCommands</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#getSlashCommands--">getSlashCommands</a></span>()</code>
+<div class="block">Get all the registered <a href="../../../com/yosoyvillaa/vjcommands/command/SlashCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>SlashCommand</code></a></div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -170,19 +179,27 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#registerCommand-com.yosoyvillaa.vjcommands.command.ICommand-">registerCommand</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#registerCommand-com.yosoyvillaa.vjcommands.command.ICommand-">registerCommand</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</code>
+<div class="block">Try to register an <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#registerCommands-com.yosoyvillaa.vjcommands.command.ICommand...-">registerCommands</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>...&nbsp;commands)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#registerCommands-com.yosoyvillaa.vjcommands.command.ICommand...-">registerCommands</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>...&nbsp;commands)</code>
+<div class="block">Try to register a list of <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#unregisterAllCommands--">unregisterAllCommands</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#unregisterAllCommands--">unregisterAllCommands</a></span>()</code>
+<div class="block">Unregister all registered commands</div>
+</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#unregisterCommand-com.yosoyvillaa.vjcommands.command.ICommand-">unregisterCommand</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html#unregisterCommand-com.yosoyvillaa.vjcommands.command.ICommand-">unregisterCommand</a></span>(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</code>
+<div class="block">Unregister the given <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -230,6 +247,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getJda</h4>
 <pre>public&nbsp;net.dv8tion.jda.api.JDA&nbsp;getJda()</pre>
+<div class="block">Gets the <code>JDA</code> instance associated to this <a href="../../../com/yosoyvillaa/vjcommands/CommandManager.html" title="class in com.yosoyvillaa.vjcommands"><code>CommandManager</code></a></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>The <code>JDA</code> instance</dd>
+</dl>
 </li>
 </ul>
 <a name="getCommands--">
@@ -239,6 +261,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getCommands</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&gt;&nbsp;getCommands()</pre>
+<div class="block">Get all the registered commands</div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a set of all the <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a> registered</dd>
+</dl>
 </li>
 </ul>
 <a name="getPrefixCommands--">
@@ -248,6 +275,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getPrefixCommands</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/PrefixCommand.html" title="interface in com.yosoyvillaa.vjcommands.command">PrefixCommand</a>&gt;&nbsp;getPrefixCommands()</pre>
+<div class="block">Get all the registered <a href="../../../com/yosoyvillaa/vjcommands/command/PrefixCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>PrefixCommand</code></a></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a set of all the <a href="../../../com/yosoyvillaa/vjcommands/command/PrefixCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>PrefixCommand</code></a> registered</dd>
+</dl>
 </li>
 </ul>
 <a name="getSlashCommands--">
@@ -257,6 +289,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>getSlashCommands</h4>
 <pre>public&nbsp;<a href="https://docs.oracle.com/javase/8/docs/api/java/util/Set.html?is-external=true" title="class or interface in java.util">Set</a>&lt;<a href="../../../com/yosoyvillaa/vjcommands/command/SlashCommand.html" title="interface in com.yosoyvillaa.vjcommands.command">SlashCommand</a>&gt;&nbsp;getSlashCommands()</pre>
+<div class="block">Get all the registered <a href="../../../com/yosoyvillaa/vjcommands/command/SlashCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>SlashCommand</code></a></div>
+<dl>
+<dt><span class="returnLabel">Returns:</span></dt>
+<dd>a set of all the <a href="../../../com/yosoyvillaa/vjcommands/command/SlashCommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>SlashCommand</code></a> registered</dd>
+</dl>
 </li>
 </ul>
 <a name="registerCommand-com.yosoyvillaa.vjcommands.command.ICommand-">
@@ -265,7 +302,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>registerCommand</h4>
-<pre>public&nbsp;void&nbsp;registerCommand(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</pre>
+<pre>public&nbsp;void&nbsp;registerCommand(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)
+                     throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+<div class="block">Try to register an <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>command</code> - the <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a> to register</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if the command is already registered</dd>
+</dl>
 </li>
 </ul>
 <a name="registerCommands-com.yosoyvillaa.vjcommands.command.ICommand...-">
@@ -274,7 +319,15 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <ul class="blockList">
 <li class="blockList">
 <h4>registerCommands</h4>
-<pre>public&nbsp;void&nbsp;registerCommands(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>...&nbsp;commands)</pre>
+<pre>public&nbsp;void&nbsp;registerCommands(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>...&nbsp;commands)
+                      throws <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></pre>
+<div class="block">Try to register a list of <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>commands</code> - the <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a> list to register</dd>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code><a href="https://docs.oracle.com/javase/8/docs/api/java/lang/IllegalArgumentException.html?is-external=true" title="class or interface in java.lang">IllegalArgumentException</a></code> - if a command is already registered</dd>
+</dl>
 </li>
 </ul>
 <a name="unregisterCommand-com.yosoyvillaa.vjcommands.command.ICommand-">
@@ -284,6 +337,11 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>unregisterCommand</h4>
 <pre>public&nbsp;void&nbsp;unregisterCommand(<a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command">ICommand</a>&nbsp;command)</pre>
+<div class="block">Unregister the given <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a></div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>command</code> - the <a href="../../../com/yosoyvillaa/vjcommands/command/ICommand.html" title="interface in com.yosoyvillaa.vjcommands.command"><code>ICommand</code></a> to unregister</dd>
+</dl>
 </li>
 </ul>
 <a name="unregisterAllCommands--">
@@ -293,6 +351,7 @@ extends <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Object.html
 <li class="blockList">
 <h4>unregisterAllCommands</h4>
 <pre>public&nbsp;void&nbsp;unregisterAllCommands()</pre>
+<div class="block">Unregister all registered commands</div>
 </li>
 </ul>
 <a name="onPrefixCommand-net.dv8tion.jda.api.events.message.MessageReceivedEvent-">

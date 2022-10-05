@@ -16,6 +16,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * The {@link CommandManager} is the place where you can manage all you commands.
+ */
 public class CommandManager {
 
     private static final Logger logger = LoggerFactory.getLogger("VJCommands");
@@ -31,10 +34,20 @@ public class CommandManager {
         this.slashCommands = new HashMap<>();
     }
 
+    /**
+     * Gets the {@link JDA} instance associated to this {@link CommandManager}.
+     *
+     * @return The {@link JDA} instance
+     */
     public JDA getJda() {
         return jda;
     }
 
+    /**
+     * Get all the registered commands.
+     *
+     * @return a set of all the {@link ICommand} registered
+     */
     public Set<ICommand> getCommands() {
         Set<ICommand> commands = new HashSet<>();
         commands.addAll(prefixCommands.values());
@@ -42,15 +55,32 @@ public class CommandManager {
         return commands;
     }
 
+    /**
+     * Get all the registered {@link PrefixCommand}.
+     *
+     * @return a set of all the {@link PrefixCommand} registered
+     */
     public Set<PrefixCommand> getPrefixCommands() {
         return new HashSet<>(prefixCommands.values());
     }
 
+    /**
+     * Get all the registered {@link SlashCommand}.
+     *
+     * @return a set of all the {@link SlashCommand} registered
+     */
     public Set<SlashCommand> getSlashCommands() {
         return new HashSet<>(slashCommands.values());
     }
 
-    public void registerCommand(ICommand command) {
+    /**
+     * Try to register an {@link ICommand}.
+     *
+     * @param command the {@link ICommand} to register
+     *
+     * @throws IllegalArgumentException if the command is already registered
+     */
+    public void registerCommand(ICommand command) throws IllegalArgumentException {
         logger.info("Registering command: " + command.getName());
         if (command instanceof PrefixCommand) {
             PrefixCommand prefixCommand = (PrefixCommand) command;
@@ -71,12 +101,24 @@ public class CommandManager {
         logger.info("Command " + command.getName() + " registered");
     }
 
-    public void registerCommands(ICommand... commands) {
+    /**
+     * Try to register a list of {@link ICommand}.
+     *
+     * @param commands the {@link ICommand} list to register
+     *
+     * @throws IllegalArgumentException if a command is already registered
+     */
+    public void registerCommands(ICommand... commands) throws IllegalArgumentException {
         for (ICommand command : commands) {
             registerCommand(command);
         }
     }
 
+    /**
+     * Unregister the given {@link ICommand}.
+     *
+     * @param command the {@link ICommand} to unregister
+     */
     public void unregisterCommand(ICommand command) {
         logger.info("Unregistering command: " + command.getName());
         if (command instanceof PrefixCommand) {
@@ -92,6 +134,9 @@ public class CommandManager {
         logger.info("Command " + command.getName() + " unregistered");
     }
 
+    /**
+     * Unregister all registered commands.
+     */
     public void unregisterAllCommands() {
         for (PrefixCommand prefixCommand : prefixCommands.values()) {
             unregisterCommand(prefixCommand);
