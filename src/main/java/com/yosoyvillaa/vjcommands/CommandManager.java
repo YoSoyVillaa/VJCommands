@@ -6,8 +6,8 @@ import com.yosoyvillaa.vjcommands.command.SlashCommand;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.AnnotatedEventManager;
-import net.dv8tion.jda.api.hooks.SubscribeEvent;
+import net.dv8tion.jda.api.hooks.*;
+import org.jetbrains.annotations.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,17 +19,22 @@ import java.util.Set;
 /**
  * The {@link CommandManager} is the place where you can manage all you commands.
  */
-public class CommandManager {
+public class CommandManager extends ListenerAdapter {
 
     private static final Logger logger = LoggerFactory.getLogger("VJCommands");
     private final JDA jda;
     private final Map<String, PrefixCommand> prefixCommands;
     private final Map<String, SlashCommand> slashCommands;
 
-    public CommandManager(JDA jda) {
+    public CommandManager(JDA jda, IEventManager eventManager) {
         this.jda = jda;
-        this.jda.setEventManager(new AnnotatedEventManager());
-        this.jda.addEventListener(this);
+        if (eventManager instanceof AnnotatedEventManager) {
+            this.jda.addEventListener(this);
+        } else if (eventManager instanceof InterfacedEventManager) {
+            this.jda.addEventListener(this);
+        } else {
+            throw new RuntimeException("EventListener is not defined properly as AnnotatedEventManager or InterfacedEventManager");
+        }
         this.prefixCommands = new HashMap<>();
         this.slashCommands = new HashMap<>();
     }
@@ -148,15 +153,16 @@ public class CommandManager {
     }
 
     @SubscribeEvent
-    public void onPrefixCommand(MessageReceivedEvent event) {
+    @Override
+    public void onMessageReceived(@NotNull MessageReceivedEvent event) {
         for (String s : prefixCommands.keySet()) {
             if (s.equalsIgnoreCase(event.getMessage().getContentRaw().split(" ")[0]))
                 prefixCommands.get(s).execute(event);
         }
     }
 
-    @SubscribeEvent
-    public void onSlashCommand(SlashCommandInteractionEvent event) {
+    @Override
+    public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         for (String s : slashCommands.keySet()) {
             if (s.equalsIgnoreCase(event.getName())) {
                 slashCommands.get(s).execute(event);
