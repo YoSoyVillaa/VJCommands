@@ -5,17 +5,15 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
-    maven("https://jitpack.io")
-    maven("https://repo.maven.apache.org/maven2/")
+    mavenCentral()
 }
 
 dependencies {
-    implementation("net.dv8tion:JDA:5.0.0-alpha.20")
+    implementation("net.dv8tion:JDA:5.0.0-beta.1")
 }
 
 group = "com.yosoyvillaa"
-version = "1.4"
+version = "1.5"
 description = "VJCommands"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
 
