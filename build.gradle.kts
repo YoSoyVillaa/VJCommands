@@ -1,6 +1,5 @@
 plugins {
     java
-    `java-library`
     `maven-publish`
 }
 
@@ -16,6 +15,7 @@ group = "com.yosoyvillaa"
 version = "1.5"
 description = "VJCommands"
 java.sourceCompatibility = JavaVersion.VERSION_1_8
+java.targetCompatibility = JavaVersion.VERSION_1_8
 
 publishing {
     publications.create<MavenPublication>("maven") {
