@@ -161,6 +161,7 @@ public class CommandManager extends ListenerAdapter {
         }
     }
 
+    @SubscribeEvent
     @Override
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
         for (String s : slashCommands.keySet()) {
